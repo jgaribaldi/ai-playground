@@ -1,0 +1,5 @@
+ollama/
+open-webui/
+
+*.iml
+.idea/*

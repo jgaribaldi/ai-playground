@@ -1,0 +1,27 @@
+services:
+  ia:
+    image: ollama/ollama
+    container_name: ia
+    hostname: ia
+    networks:
+      - ia-playground
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama:/root/.ollama
+  webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    hostname: open-webui
+    networks:
+      - ia-playground
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./open-webui:/app/backend/data
+    environment:
+      OLLAMA_BASE_URL: "http://ia:11434"
+      WEBUI_AUTH: false
+networks:
+  ia-playground:
+    name: ia-playground
