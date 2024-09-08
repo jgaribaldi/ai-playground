@@ -18,7 +18,7 @@ Open WebUI's default authentication is disabled.
 ## Requirements
 
 Docker! :rocket:
-g
+
 ## Startup
 
 ```
