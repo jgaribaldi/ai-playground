@@ -1,5 +1,5 @@
-# IA Playground
-Quickly get IA up and running locally
+# AI Playground
+Quickly get AI up and running locally
 
 ## Download a model
 From the command line, run
