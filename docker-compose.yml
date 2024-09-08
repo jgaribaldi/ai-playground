@@ -1,10 +1,10 @@
 services:
-  ia:
+  ai:
     image: ollama/ollama
-    container_name: ia
-    hostname: ia
+    container_name: ai
+    hostname: ai
     networks:
-      - ia-playground
+      - ai-playground
     ports:
       - "11434:11434"
     volumes:
@@ -14,14 +14,14 @@ services:
     container_name: open-webui
     hostname: open-webui
     networks:
-      - ia-playground
+      - ai-playground
     ports:
       - "3000:8080"
     volumes:
       - ./open-webui:/app/backend/data
     environment:
-      OLLAMA_BASE_URL: "http://ia:11434"
+      OLLAMA_BASE_URL: "http://ai:11434"
       WEBUI_AUTH: false
 networks:
-  ia-playground:
-    name: ia-playground
+  ai-playground:
+    name: ai-playground
