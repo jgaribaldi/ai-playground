@@ -2,10 +2,6 @@
 
 Quickly get AI up and running locally.
 
-## Requirements
-
-Docker! :rocket:
-
 ## What it does
 
 This docker compose file will run an instance of [Ollama](https://ollama.com/) and an instance of the 
@@ -19,17 +15,21 @@ want to download the models every time you run this docker compose):
 
 Open WebUI's default authentication is disabled.
 
+## Requirements
+
+Docker! :rocket:
+g
+## Startup
+
+```
+docker compose up
+```
+
 ## Download a model
 
 From the command line, run
 ```
 curl http://localhost:11434/api/pull -d '{"name":"llama3.1"}'
-```
-
-## Startup
-
-```
-docker compose up
 ```
 
 ## Usage
