@@ -9,6 +9,12 @@ services:
       - "11434:11434"
     volumes:
       - ./ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          memory: 16G
+        limits:
+          memory: 16G
   webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
@@ -19,6 +25,12 @@ services:
       - "3000:8080"
     volumes:
       - ./open-webui:/app/backend/data
+    deploy:
+      resources:
+        reservations:
+          memory: 2G
+        limits:
+          memory: 2G
     environment:
       OLLAMA_BASE_URL: "http://ai:11434"
       WEBUI_AUTH: false
